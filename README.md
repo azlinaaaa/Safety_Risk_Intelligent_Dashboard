@@ -1,103 +1,103 @@
 # HSE Risk Intelligence System: Construction Safety Analytics Dashboard
 
-## 📌 Project Overview
-This Power BI dashboard provides a comprehensive analysis of workplace safety incidents by examining incident frequency, risk levels, injury severity, root causes, and hazard groups. Analyzing over 4,847 workplace incident records, the dashboard aims to help safety managers and decision-makers identify critical safety issues, monitor historical trends, and implement data-driven preventive actions to reduce workplace accidents.
+An interactive four-page Power BI dashboard that turns **4,847 construction safety incident records** into an executive overview of incident severity, risk, hazards, injuries, and reported contributing factors. The project demonstrates how business intelligence can help safety teams explore patterns and decide where further investigation may be useful.
 
----
+> **Scope:** The dashboard describes patterns in the supplied incident data. It does not prove that a factor caused an incident or that a recommended action will reduce incidents.
 
-## 📊 Dashboard 1: Executive Overview
+## Business problem
 
-![Dashboard 1 - Executive Overview](https://github.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/blob/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/Dashboard.png)
+Construction safety teams need to understand more than the total number of incidents. They need to see how incidents relate to severity, hazard type, injury location, timing, and recorded root-cause factors. Without a consolidated analytical view, it can be harder for managers to identify recurring patterns and direct investigations or preventive reviews.
 
-The Executive Dashboard presents a high-level summary of construction safety incidents through key performance indicators and interactive visualizations.
+This project addresses the need for a single, interactive view of safety performance that helps managers ask:
 
-### Key Performance Indicators (KPIs)
-- **Total Incidents:** 4,847
-- **Fatal Cases:** 2,964
-- **High-Risk Incidents:** 486
-- **Average Risk Score:** 3.02
+- What is the recorded incident volume and severity?
+- Which incident types and hazard groups appear most often or have the highest risk scores?
+- When do incidents occur more frequently?
+- Which body parts are most often recorded as injured?
+- Which records or categories need further investigation or data-quality review?
 
-*These KPIs provide an overall picture of workplace safety performance and indicate that fatal incidents remain a significant concern.*
+## Solution
 
-### Visual Insights
-- **Degree of Injury:** Fatal incidents represent the largest proportion of recorded cases, indicating that workplace accidents often result in severe consequences.
-- **Top 3 Incident Types:** The primary safety issues across sites are **Struck By**, **Other**, and **Vehicle** incidents.
-- **Monthly Incident Distribution:** The highest number of incidents occurred during **March, February, and January**, suggesting that safety inspections and preventive measures should be strengthened during these peak months.
+I developed a Power BI dashboard that organises the incident data into four connected views: Executive Overview, Risk & Safety Analysis, Incident Analysis, and Root Cause & Investigation. Power Query supports data preparation, while DAX measures present key indicators for management review.
 
----
+The dashboard is designed to help users move from an overall safety snapshot to more detailed questions about hazards, injuries, and contributing factors. The findings can inform investigation priorities and preventive reviews; they should be validated with site-level evidence and HSE expertise before operational decisions are made.
 
-## ⚠️ Dashboard 2: Risk & Safety Analysis
+## Project at a glance
 
-![Dashboard 2 - Risk & Safety Analysis](https://github.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/blob/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/RISK%20%26%20SAFETY.png)
+| Item | Description |
+| --- | --- |
+| Domain | Construction health, safety, and environment (HSE) |
+| Records analysed | 4,847 workplace incidents |
+| Primary technology | Microsoft Power BI |
+| Data preparation | Power Query |
+| Measures and KPIs | DAX |
+| Dashboard pages | 4 |
+| Intended users | Safety managers, HSE officers, site leaders, and operational decision-makers |
 
-This section focuses on workplace risk levels, hazard groups, and frequently occurring dangerous situations.
+## Analytics workflow
 
-- **Risk Score Distribution:** Most incidents fall within the `0–10` risk score range. Their high frequency indicates that continuous monitoring is required to reduce the overall volume of incidents.
-- **Top Hazard Groups:** **Chemical / Fire Hazards** contribute the highest level of risk, followed by *Work at Height*, *Vehicle Hazards*, and *Machine Hazards*.
-- **Top 5 Dangerous Keywords:** *Struck By, Struck Against, Crushing, Structural Collapse,* and *Tree Trimming*. 
+```mermaid
+flowchart LR
+    A[Incident records] --> B[Prepare data in Power Query]
+    B --> C[Create measures in DAX]
+    C --> D[Build four Power BI views]
+    D --> E[Review patterns and prioritize investigation]
+```
 
-> **🚨 Risk Alert:** The risk is highly driven by a few spike-based incidents rather than continuous exposure, with Chemical/Fire Hazard being the main contributor to overall risk. Most incidents are caused by struck-by/struck-against events, indicating weak control of site safety, exclusion zones, and operational discipline.
+## Dashboard findings and business relevance
 
----
+### 1. Executive Overview
 
-## 📈 Dashboard 3: Incident Analysis
+![Executive Overview dashboard](https://raw.githubusercontent.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/Dashboard.png)
 
-![Dashboard 3 - Incident Analysis](https://github.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/blob/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/INICDENT.png)
+- **Summarised 4,847 incident records in Power BI** using four headline indicators: **2,964 fatal cases**, **486 high-risk incidents**, and an **average risk score of 3.02**, alongside total incidents. This gives managers a concise view of recorded volume and severity.
+- **Compared incident types and monthly counts** to highlight Struck By, Other, and Vehicle incidents among the leading types, and March, February, and January among the months with higher counts. This can guide follow-up reviews of event patterns and work activity.
 
-This dashboard provides a detailed analysis of incident trends, injury locations, and project distribution.
+### 2. Risk & Safety Analysis
 
-### Top 5 Injured Body Parts
-| Body Part | Percentage |
-| :--- | :--- |
-| **Head** | 35.22% |
-| **Whole Body** | 19.10% |
-| **Finger** | 18.93% |
-| **Internal Injuries** | 13.87% |
-| **Heart** | 12.80% |
+![Risk and Safety Analysis dashboard](https://raw.githubusercontent.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/RISK%20%26%20SAFETY.png)
 
-*Head injuries account for more than one-third of all reported injuries, highlighting the critical importance of enforcing personal protective equipment (PPE) compliance.*
+- **Segmented incident risk scores in Power BI** across the reported 0–10 range and ranked hazard groups. Chemical / Fire Hazards recorded the highest risk contribution, followed by Work at Height, Vehicle Hazards, and Machine Hazards; this helps focus further hazard-control reviews.
+- **Grouped dangerous-event keywords** including Struck By, Struck Against, Crushing, Structural Collapse, and Tree Trimming. These categories provide a starting point for checking controls such as exclusion zones, equipment safeguards, and site procedures.
 
-### Additional Insights
-- **Monthly Trend:** March recorded the highest number of incidents, while June recorded the lowest.
-- **Project Distribution:** A significant proportion of incidents are recorded under an "Unknown Project (0)", suggesting potential issues with data quality or incomplete incident reporting.
+### 3. Incident Analysis
 
----
+![Incident Analysis dashboard](https://raw.githubusercontent.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/INICDENT.png)
 
-## 🔍 Dashboard 4: Root Cause & Investigation
+- **Analysed injury records by body part** and found Head (35.22%), Whole Body (19.10%), Finger (18.93%), Internal Injuries (13.87%), and Heart (12.80%) among the reported categories. The head-injury share supports reviewing PPE fit, availability, and compliance; the dashboard alone does not establish PPE as the cause.
+- **Compared incident counts by month and project**: March recorded the highest count and June the lowest on this dashboard page. A notable number of incidents were assigned to “Unknown Project (0),” indicating a data-quality issue for project-level reporting.
 
-![Dashboard 4 - Root Cause & Investigation](https://github.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/blob/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/ROOT%20CAUSE%20%26%20INVESTIGATION.png))
+### 4. Root Cause & Investigation
 
-This dashboard investigates the underlying causes of workplace incidents by examining human and environmental factors.
+![Root Cause and Investigation dashboard](https://raw.githubusercontent.com/azlinaaaa/Safety_Risk_Intelligent_Dashboard/62c90809f842549d2b253a5f4681d4a6b39cab06/Dashboard/ROOT%20CAUSE%20%26%20INVESTIGATION.png)
 
-> **⚠️ Investigation Alert:** Human error remains the main cause of incidents, especially unsafe decisions and bypassing safety controls. Chemical/Fire Hazards recorded the highest risk scores, while unsafe work conditions continue to increase overall site risk.
+- **Organised reported contributing factors** into human and environmental categories, including Misjudgement, Safety Devices Removed, Work Surface, Shear Point Action, Weather, and Temperature. This helps investigators examine patterns in recorded factors alongside incident evidence.
+- **Compared annual average risk scores by hazard group** and surfaced the highest listed combinations: Chemical / Fire Hazard in 2017 (9.07), Chemical / Fire Hazard in 2016 (9.06), and Vehicle Hazard in 2017 (9.00). These scores help identify cases for review; they do not by themselves establish a cause.
 
-- **Human Factors:** Unsafe behavior and poor decision-making (e.g., Misjudgement, Safety Devices Removed) are major contributors.
-- **Environmental Factors:** Work Surface, Shear Point Action, Weather, and Temperature significantly influence workplace safety.
+## Recommended business actions
 
-### Highest Average Risk Score by Year
-| Rank | Year | Hazard Group | Average Risk Score |
-| :---: | :---: | :--- | :---: |
-| 1 | 2017 | Chemical / Fire Hazard | 9.07 |
-| 2 | 2016 | Chemical / Fire Hazard | 9.06 |
-| 3 | 2017 | Vehicle Hazard | 9.00 |
+The dashboard supports prioritisation and discussion. Based on the patterns shown, HSE teams could:
 
-*Chemical/Fire Hazards consistently recorded the highest risk scores across multiple years, making them the top priority for future safety improvement initiatives.*
+- Review struck-by and struck-against incidents, including site traffic, exclusion zones, and work sequencing.
+- Investigate Chemical / Fire Hazard cases with high risk scores and verify whether controls are appropriate and consistently applied.
+- Review head-injury cases alongside task-specific PPE assessments and site observations.
+- Check the “Unknown Project (0)” records and strengthen project-field completion and reporting validation.
+- Compare incident counts with exposure data, such as hours worked, workforce size, and project activity, before drawing conclusions about relative risk.
 
----
+These are recommendations for investigation. The dashboard does not measure the effect of implementing them.
 
-## 💡 Key Takeaways
-1. A total of **4,847 incidents** were analyzed, with 2,964 fatal cases recorded.
-2. **March** consistently recorded the highest number of workplace incidents.
-3. **Struck By** incidents are the most frequent accident type.
-4. **Chemical/Fire Hazard** is the highest-risk hazard group across multiple years.
-5. **Human error**, particularly poor judgment and unsafe decisions, remains the leading root cause.
-6. **Head injuries** (35.22%) dominate reported injuries, emphasizing the need for strict PPE enforcement.
-7. Unclassified project data highlights opportunities to improve **data quality and reporting accuracy**.
+## Tools and skills demonstrated
 
----
+- **Microsoft Power BI:** interactive dashboard design and data storytelling
+- **Power Query:** data cleaning, transformation, and ETL
+- **DAX:** KPI and analytical measure development
+- **Business analysis:** incident segmentation, trend analysis, risk review, and communicating findings for decision support
 
-## 🛠️ Tools & Technologies Used
-- **Microsoft Power BI** (Interactive Dashboard Design)
-- **Power Query** (Data Cleaning & ETL)
-- **DAX** (Data Analysis Expressions for Measures & KPIs)
-- **Business Intelligence & Safety Analytics**
+## Data interpretation note
+
+The dataset contains **2,964 fatal cases out of 4,847 records**, an unusually high share for many incident datasets. The definition of “fatal,” source coding, and dataset scope should be validated before using the dashboard for operational decisions. Incident frequency is not normalised by hours worked, workforce size, or project exposure, and recorded associations do not prove causation.
+
+## Author
+
+**Norazlina Mohd Shariff**  
+Data Science Student | Aspiring Data Analyst
